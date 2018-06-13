@@ -1,6 +1,6 @@
 {
   "name": "live-plugin-manager-git-fix",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "Forked version with a fix to github referecences. Install and uninstall any node package at runtime from npm registry",
   "keywords": [
     "plugin",
