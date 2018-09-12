@@ -92,7 +92,15 @@ function extractRepositoryInfo(repository: string) {
     owner = parts[3];
     repo = repoParts[0].replace(".git", "");
     ref = repoParts[1];
-  } else if (parts.length !== 2) {
+  }
+  else if(repository.indexOf("github:") >= 0) {
+    var regex = /(github:)(.*)(\/)(.*(?<!#))(#)(.*)/;
+    let _parts = regex.exec(repository) || [];
+    owner = _parts[2];
+    repo = _parts[4];
+    ref = _parts[6];
+  }
+  else if (parts.length !== 2) {
     throw new Error("Invalid repository name");
   } else {
     let repoParts = parts[1].split("#");
